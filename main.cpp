@@ -38,11 +38,13 @@ static void ParseShader(const std::string& filepath)
             ss[(int)type] << line << '\n';
         }
     }
-    return { ss[0].str(), ss[1].str() };
+    return {ss[0].str(), ss[1].str() };
 };
 
 static int CreateShader(const std::string& vertexShader, const std::string& fragmentShader)
 {
+    unsigned int program = glCreateProgram();
+
 
 }
 
@@ -57,7 +59,7 @@ int main(void)
     glewInit();
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(640, 480, "OpenGLProject", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
